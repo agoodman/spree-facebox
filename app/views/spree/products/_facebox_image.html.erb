@@ -1,9 +1,7 @@
-<% if image -%>
 <div class="product-image">
-  <% if image_controls.enable_zoom? %>
-    <%= link_to image_tag(image.attachment.url(:product), itemprop: "image"), rel: 'facebox' %>
+  <% if facebox_image.nil? %>
+  	<%= product_image(@product, itemprop: "image") %>
   <% else %>
-    <%= product_image(@product, itemprop: "image") %>
+  	<%= link_to image_tag(facebox_image.attachment.url(:product), itemprop: "image"), rel: 'facebox' %>
   <% end %>
 </div>
-<% end -%>
