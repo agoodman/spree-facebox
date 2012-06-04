@@ -1,5 +1,4 @@
 require 'spree_core'
-require 'spree_facebox_hooks'
 
 module SpreeFacebox
   class Engine < Rails::Engine
