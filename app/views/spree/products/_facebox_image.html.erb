@@ -2,6 +2,6 @@
   <% if facebox_image.nil? %>
   	<%= product_image(@product, itemprop: "image") %>
   <% else %>
-  	<%= link_to image_tag(facebox_image.attachment.url(:product), itemprop: "image"), '#', rel: 'facebox' %>
+  	<%= link_to image_tag(facebox_image.attachment.url(size), itemprop: "image"), facebox_image.attachment.url(:xl), rel: 'facebox' %>
   <% end %>
 </div>
