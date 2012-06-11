@@ -77,14 +77,6 @@
     else $.facebox.reveal(data, klass)
   }
 
-  $.faceboxThumb = function(data, klass) {
-	this.bind('click', function() {
-		$('#main-image img').attr('src', this.href)
-		$('#main-image a').attr('href', this.attr('data-href'))
-		return false
-	})
-  }
-
   /*
    * Public, $.facebox methods
    */
@@ -165,6 +157,14 @@
     }
 
     return this.bind('click.facebox', clickHandler)
+  }
+
+  $.fn.faceboxThumb = function(settings) {
+	this.bind('click', function(event) {
+		$('#main-image img').attr('src', this.href)
+		$('#main-image a').attr('href', this.attr('data-href'))
+		event.stopPropagation()
+	})
   }
 
   /*

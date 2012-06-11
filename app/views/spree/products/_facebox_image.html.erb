@@ -3,7 +3,7 @@
   	<%= product_image(@product, itemprop: "image") %>
   <% else %>
 		<% if thumb -%>
-  	<%= link_to image_tag(facebox_image.attachment.url(:small), itemprop: "image"), facebox_image.attachment.url(:product), rel: 'facebox-thumb', "data-href" => facebox_image.attachment.url(:xl) %>
+  	<%= link_to image_tag(facebox_image.attachment.url(:small), itemprop: "image"), facebox_image.attachment.url(:product), rel: 'thumb', "data-href" => facebox_image.attachment.url(:xl) %>
 		<% else -%>
   	<%= link_to image_tag(facebox_image.attachment.url(:product), itemprop: "image"), facebox_image.attachment.url(:xl), rel: 'facebox' %>
 		<% end -%>
