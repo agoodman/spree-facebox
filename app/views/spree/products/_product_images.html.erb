@@ -1,8 +1,8 @@
 <div id="product-images" data-hook="product_images">
   <div id="main-image">
-    <%= render :partial => 'facebox_image', :object => @product.images.first, :locals => { :size => :product} -%>
+    <%= render :partial => 'facebox_image', :object => @product.images.first, :locals => { :thumb => false } -%>
   </div>
   <div id="product-thumbnails" class="thumbnails">
-    <%= render :partial => 'facebox_image', :collection => @product.images[1..-1], :locals => {:size => :small} -%>
+    <%= render :partial => 'facebox_image', :collection => @product.images, :locals => { :thumb => true } -%>
   </div>
 </div>
