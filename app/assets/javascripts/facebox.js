@@ -164,6 +164,7 @@
 		$('#main-image img').attr('src', this.href)
 		$('#main-image a').attr('href', this.attr('data-href'))
 		event.stopPropagation()
+		return false
 	})
   }
 
