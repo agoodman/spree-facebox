@@ -77,6 +77,14 @@
     else $.facebox.reveal(data, klass)
   }
 
+  $.faceboxThumb = function(data, klass) {
+	this.bind('click', function() {
+		$('#main-image img').attr('src', this.href)
+		$('#main-image a').attr('href', this.attr('data-href'))
+		return false
+	})
+  }
+
   /*
    * Public, $.facebox methods
    */

@@ -2,6 +2,10 @@
   <% if facebox_image.nil? %>
   	<%= product_image(@product, itemprop: "image") %>
   <% else %>
-  	<%= link_to image_tag(facebox_image.attachment.url(size), itemprop: "image"), facebox_image.attachment.url(:xl), rel: 'facebox' %>
+		<% if size == :product -%>
+  	<%= link_to image_tag(facebox_image.attachment.url(:product), itemprop: "image"), facebox_image.attachment.url(:xl), rel: 'facebox' %>
+		<% else -%>
+  	<%= link_to image_tag(facebox_image.attachment.url(:small), itemprop: "image"), facebox_image.attachment.url(:product), rel: 'facebox-thumb', "data-href" => facebox_image.attachment.url(:xl) %>
+		<% end -%>
   <% end %>
 </div>
